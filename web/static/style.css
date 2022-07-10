@@ -1,0 +1,166 @@
+
+
+h1 {
+    margin-top: 0.5em;
+}
+
+button {
+    padding: 2px 4px 2px 4px !important;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+
+div.container {
+    max-width: 90%;
+}
+
+div.center-div {
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+div.left-div {
+    text-align: left;
+    margin-top: 0.5em;
+}
+
+div.footer-space {
+    height: 1em;
+}
+
+option.placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+span.help {
+    font-style: italic;
+    color: #888;
+}
+
+div.hidden {
+    display: none;
+}
+
+#settings li {
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+}
+#settings div.form-check {
+    display: inline-block;
+    margin-left: 1em;
+    margin-top: 0.25em;
+}
+#settings div.form-entry {
+    display: inline-block;
+    margin-left: 1em;
+    margin-bottom: 0.25em;
+}
+#settings div.form-entry select, label, input {
+    width: auto;
+    display: inline;
+}
+#settings div.form-entry input[type="number"] {
+    width: 70px;
+    display: inline;
+}
+
+div.result-div {
+    display: none;
+}
+
+div.event-block {
+    margin-top: 1em;
+    text-align: left;
+    background-color: #eee;
+    padding: 0.5em;
+}
+div.event-block span.event-info {
+    margin-right: 0.5em;
+    border-style: solid;
+    border-color: #444;
+    background: #fff;
+    white-space: nowrap;
+}
+div.event-block span.event-info span.key {
+    background: #444;
+    color: #fff;
+    padding: 2px;
+    padding-right: 3px;
+}
+div.event-block span.event-info span.value {
+    padding: 2px;
+    margin-left: 0.2em;
+}
+div.event-block span.event-info a.show-frames {
+    padding: 2px;
+}
+div.event-block button {
+    margin-bottom: 0.2em;
+}
+
+div.frame-block {
+    width: 100%;
+    margin-top: 0.5em;
+}
+div.frame-block img {
+    width: 400px;
+    display: inline-block;
+}
+div.frame-block img.context-frame {
+    opacity: 0.4;
+}
+div.frame-block div.frame-info {
+    width: 200px;
+    display: inline-block;
+}
+div.frame-block div.frame-info span {
+    text-align: center;
+    display: block;
+}
+div.frame-block div.frame-info span.context {
+    font-weight: bold;
+    color: #999;
+}
+div.frame-block div.frame-info span.ground-truth {
+    font-weight: bold;
+    color: #f00;
+}
+div.frame-block div.frame-info span.predicted {
+    font-weight: bold;
+    color: #00f;
+}
+div.frame-block div.frame-info span.predicted-other {
+    font-weight: bold;
+    color: #aaf;
+}
+div.frame-block div.frame-info span.ground-truth-other {
+    font-weight: bold;
+    color: #faa;
+}
+div.result-div div.frame-div hr {
+    border: 2px solid #000;
+}
+
+span.data-value {
+    font-style: italic;
+    color: #f00;
+}
+
+/* div.event-frames img {
+    display: inline-block;
+    width: 50%;
+    border: 10px solid #fff;
+}
+div.event-frames img.selected {
+    border: 10px solid #f00;
+}
+div.event-frames img.truth {
+    border: 10px solid #f00;
+}
+div.event-frames img.pred {
+    border: 10px solid #00f;
+}
+div.event-frames img.both {
+    border: 10px solid #f0f;
+} */

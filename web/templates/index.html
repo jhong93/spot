@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Results</title>
+{% endblock %}
+
+{% block imports %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
+
+{% block body %}
+<h1>Results</h1>
+<p>
+    Showing predictions for <i>{{ pred_dir }}</i>.
+</p>
+<p>
+    Usage:
+    <ul>
+        <li>Select the file containing predictions (named by split and epoch).</li>
+        <li>Results are presented in three categories in the sections below.</li>
+        <li>Click <a href="#">show/hide</a> to show the events (predicted, ground truth, or both) for each category.</l1>
+        <li>For each prediction or ground truth event, click the <a href="#">+/-</a> to show the frames.
+            <ul>
+                <li>Frames within tolerance are shown, as well as extra frames densely and sparsely sampled around the tolerated window. The black lines indicate the tolerance.</li>
+                <li>Click the frame to open the full resolution image in a new window</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+<hr>
+<div class="center-div" id="settings">
+    <div class="form-entry">
+        <label for="predName">Pred file:</label>
+        <select id="predName">
+            {% for pred in pred_files %}<option value="{{ pred }}">{{ pred }}</option>{% endfor %}
+        </select>
+    </div>
+    <div class="form-entry">
+        <label class="form-control-label" for="numFrames">
+        # frames tolerance:
+        </label>
+        <input class="form-control form-control-sm" type="number" value="2" min="1" max="10" id="numFrames">
+    </div>
+    <div class="form-entry">
+        <label class="form-control-label" for="numContextFrames">
+        # context frames (vis only):
+        </label>
+        <input class="form-control form-control-sm" type="number" value="3" min="1" max="10" id="numContextFrames">
+    </div>
+    <div class="form-entry">
+        <label class="form-control-label" for="sortBy">
+            Sort by:
+        </label>
+        <select id="sortBy">
+            <option value="score">score</option>
+            <option value="video">video and frame</option>
+        </select>
+    </div>
+    <div class="form-entry">
+        <label class="form-control-label" for="autoRefresh">
+            Auto-refresh:
+        </label>
+        <input type="checkbox" id="autoRefresh">
+    </div>
+    <br>
+    <div class="form-entry">
+        <label class="form-control-label" for="labelFilter">
+            Select labels:
+        </label>
+        <select id="labelFilter">
+            <option value="">n/a</option>
+            {% for label in labels %}<option value="{{ label }}">{{ label }}</option>{% endfor %}
+        </select>
+    </div>
+    <div class="form-entry">
+        <label class="form-control-label" for="videoFilter">
+            Select video:
+        </label>
+        <select id="videoFilter">
+            <option value="">n/a</option>
+            {% for video in videos %}<option value="{{ video.1 }}">{{ video.0 }} - {{ video.1 }}</option>{% endfor %}
+        </select>
+    </div>
+</div>
+
+<hr>
+<h4>Not detected</h4>
+<div class="left-div content-div">
+    <p>
+        <span class="help">
+            False negatives where the ground truth event is not detected.
+        </span>
+    </p>
+    <p>
+        Count: <span class="data-value" id="missingDetCount">XX</span> (<a class="toggle-result">show / hide</a>)
+    </p>
+    <div class="result-div" id="missingDetDiv"></div>
+</div>
+
+<hr>
+<h4>Successful and duplicate detections</h4>
+<div class="left-div content-div">
+    <p>
+        <span class="help">
+            The ground truth event is detected by at least one prediction within the tolerance, but may also have additional false positives.
+        </span>
+    </p>
+    <p>
+        Count: <span class="data-value" id="closeDetCount">XX</span>
+        &nbsp;
+        Duplicates: <span class="data-value" id="duplicateDetCount">XX</span> (<a class="toggle-result">show / hide</a>)
+    </p>
+    <div class="result-div" id="closeDetDiv"></div>
+</div>
+
+<hr>
+<h4>Spurious detections</h4>
+<div class="left-div content-div">
+    <p>
+        <span class="help">
+            The prediction is not within the tolerance of any ground truth event. These are unambiguous false positives.
+        </span>
+    </p>
+    <p>
+        Count: <span class="data-value" id="spuriousDetCount">XX</span> (<a class="toggle-result">show / hide</a>)
+    </p>
+    <div class="result-div" id="spuriousDetDiv"></div>
+</div>
+
+<div class='footer-space'></div>
+{% endblock %}
+
+{% block code %}
+<script src="{{ url_for('static', filename='index.js') }}"></script>
+{% endblock %}
