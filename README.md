@@ -27,6 +27,10 @@ This is a useful task for annotating video for analysis and synthesis when tempo
 In this regime, the most crucial design aspect is end-to-end learning of spatial-temporal features from the pixels.
 We present a surprisingly strong, compact, and end-to-end learned baseline that is conceptually simpler than the two-phase architectures common in the temporal action detection, segmentation, and spotting literature.
 
+## Environment
+
+The code is tested in Linux (Ubuntu 16.04 and 20.04) with the dependency versions in ```requirements.txt```. Similar environments are likely to work also but YMMV.
+
 ## Datasets
 
 Refer to the READMEs in the [data](/data) directory for pre-processing and setup instructions.
