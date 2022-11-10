@@ -3,7 +3,7 @@
 This repository contains code for our paper:
 
 *Spotting Temporally Precise, Fine-Grained Events in Video*\
-To appear in ECCV 2022\
+In ECCV 2022\
 James Hong, Haotian Zhang, Michael Gharbi, Matthew Fisher, Kayvon Fatahalian
 
 Link: [project website](https://jhong93.github.io/projects/spot.html)

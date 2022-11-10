@@ -13,3 +13,7 @@ Set up SoccerNet for the spotting challenge. For more information about the task
 ## Notes
 
 Refer to the SoccerNet page for NDA and data license.
+
+For the challenge (non-validated) configuration, you will need to combine `train.json`, `val.json`, and `test.json` into a new `train.json`.
+
+We provide a convenience script `eval_soccernetv2.py`, which calls the SoccerNet package for evaluation.
