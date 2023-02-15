@@ -39,7 +39,7 @@ Refer to the READMEs in the [data](/data) directory for pre-processing and setup
 
 To train a model, use `python3 train_e2e.py <dataset_name> <frame_dir> -s <save_dir> -m <model_arch>`.
 
-* `<dataset_name>`: supports tennis, fs_comp, fs_perf, finediving, finegym, soccernetv2
+* `<dataset_name>`: supports tennis, fs_comp, fs_perf, finediving, finegym, soccernetv2, soccernet_ball
 * `<frame_dir>`: path to the extracted frames
 * `<save_dir>`: path to save logs, checkpoints, and inference results
 * `<model_arch>`: feature extractor architecture (e.g., RegNet-Y 200MF w/ GSM : `rny002_gsm`)
