@@ -10,6 +10,7 @@ DATASETS = [
     'finediving',
     'finegym',
     'soccernetv2',
+    'soccernet_ball'
 ]
 
 
